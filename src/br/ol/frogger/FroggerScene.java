@@ -110,6 +110,7 @@ public class FroggerScene extends Scene {
     public void updateHiscore() {
         if (score > hiscore) {
             hiscore = score;
+            saveScore();
         }
     }
     
