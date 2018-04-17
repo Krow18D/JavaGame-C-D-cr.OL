@@ -175,8 +175,7 @@ public class FroggerScene extends Scene {
         addEntity(new Obstacle(this, "car_c", 132, 144, -0.5, 1));
         addEntity(new Obstacle(this, "car_c", 196, 144, -0.5, 1));
 
-        addEntity(new Obstacle(this, "car_e", 10, 160, new Difficult(Title.getPassdiff()).getCar_velo(), 1));
-        System.out.println(""+Title.getPassdiff());
+        addEntity(new Obstacle(this, "car_e", 10, 160, 2, 1));
         
         addEntity(new Obstacle(this, "car_b", 0, 176, -1, 1));
         addEntity(new Obstacle(this, "car_b", 75, 176, -1, 1));
@@ -256,6 +255,7 @@ public class FroggerScene extends Scene {
         return null;
     }
 
+    
     @Override
     public void update() {
         checkTime();
