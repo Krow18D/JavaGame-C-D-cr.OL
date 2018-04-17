@@ -124,6 +124,16 @@ public class FroggerScene extends Scene {
     }
     
     private void updateScore() {
+        try {
+        FileInputStream fi = new FileInputStream(new File("hiscore.obj"));
+	ObjectInputStream oi = new ObjectInputStream(fi);
+        Score a = (Score)oi.readObject();
+        this.hiscore = a.getHiscore();
+      } catch(IOException e) {
+          System.out.println(e);
+      } catch(ClassNotFoundException e) {
+          System.out.println(e);
+  }
     }
     
     @Override
