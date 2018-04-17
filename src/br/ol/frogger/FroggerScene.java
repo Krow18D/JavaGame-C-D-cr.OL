@@ -109,7 +109,9 @@ public class FroggerScene extends Scene {
         }
     }
     
-    
+    private void saveScore() {
+        
+    }
     
     @Override
     public void createAllEntities() {
