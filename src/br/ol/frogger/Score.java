@@ -4,16 +4,28 @@
  * and open the template in the editor.
  */
 package br.ol.frogger;
-import java.util.Scanner;
-import java.io.*;
+import java.io.Serializable;
+
 /**
  *
  * @author N8NNY
  */
-public class Score {
+public class Score implements Serializable{
     private int hiscore;
+
     
-    public void Score(int hiscore) {
+    
+    public Score(int hiscore) {
         this.hiscore = hiscore;
     }
+
+    public int getHiscore() {
+        return hiscore;
+    }
+
+    public void setHiscore(int hiscore) {
+        this.hiscore = hiscore;
+    }
+    
+    
 }
