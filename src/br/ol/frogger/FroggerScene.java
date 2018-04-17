@@ -43,6 +43,7 @@ public class FroggerScene extends Scene {
     private int score;
     private int hiscore;
     private long playingStartTime;
+    
     //Difficult diff;
     Title title;
     
@@ -119,6 +120,7 @@ public class FroggerScene extends Scene {
         FileOutputStream f = new FileOutputStream(new File("hiscore.obj"));
 	ObjectOutputStream o = new ObjectOutputStream(f);
         o.writeObject(new Score(hiscore));
+            System.out.println("Save");
       } catch(IOException e) {
           System.out.println(e);
       }
@@ -130,6 +132,7 @@ public class FroggerScene extends Scene {
 	ObjectInputStream oi = new ObjectInputStream(fi);
         Score a = (Score)oi.readObject();
         this.hiscore = a.getHiscore();
+            System.out.println("Update");
       } catch(IOException e) {
           System.out.println(e);
       } catch(ClassNotFoundException e) {
@@ -139,6 +142,7 @@ public class FroggerScene extends Scene {
     
     @Override
     public void createAllEntities() {
+        updateScore();
         addEntity(new Initializer(this));
         addEntity(new OLPresents(this));
         addEntity(new Title(this));
