@@ -15,8 +15,12 @@ import br.ol.frogger.entity.Title;
 import br.ol.ge.core.*;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.io.*;
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * FrScene class.
@@ -110,7 +114,16 @@ public class FroggerScene extends Scene {
     }
     
     private void saveScore() {
-        
+        try {
+        FileOutputStream f = new FileOutputStream(new File("hiscore.obj"));
+	ObjectOutputStream o = new ObjectOutputStream(f);
+        o.writeObject(new Score(hiscore));
+      } catch(IOException e) {
+          System.out.println(e);
+      }
+    }
+    
+    private void updateScore() {
     }
     
     @Override
