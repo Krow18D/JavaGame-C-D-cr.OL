@@ -47,6 +47,11 @@ public class FroggerScene extends Scene {
     //Difficult diff;
     Title title;
     
+    public void setLive()
+    {
+        lives=3;
+    }
+     
     public FroggerScene() {
     }
 
@@ -329,6 +334,7 @@ public class FroggerScene extends Scene {
                 return false;
             }
         }
+        setLive();
         return true;
     }
         
