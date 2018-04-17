@@ -17,8 +17,11 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                //Core 
                 Scene scene = new FroggerScene();
+                
                 Display display = new Display(scene);
+                
                 JFrame frame = new JFrame();
                 frame.setTitle("Frogger");
                 frame.getContentPane().add(display);

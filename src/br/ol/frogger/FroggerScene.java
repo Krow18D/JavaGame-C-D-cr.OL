@@ -15,6 +15,8 @@ import br.ol.frogger.entity.Title;
 import br.ol.ge.core.*;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.io.*;
+import java.util.Scanner;
 
 /**
  * FrScene class.
@@ -80,7 +82,7 @@ public class FroggerScene extends Scene {
     public int getLives() {
         return lives;
     }
-
+    
     public int getScore() {
         return score;
     }
@@ -106,6 +108,8 @@ public class FroggerScene extends Scene {
             hiscore = score;
         }
     }
+    
+    
     
     @Override
     public void createAllEntities() {

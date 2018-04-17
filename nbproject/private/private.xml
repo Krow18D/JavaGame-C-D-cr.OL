@@ -22,15 +22,12 @@
             <file>file:/media/My%20Passport/Leo/apps/java/1981_frogger/JavaTest/src/br/ol/frogger/entity/Floatable.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Title.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/ge/core/Scene.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/ge/core/Display.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Obstacle.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/ge/core/Difficult.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/main/Main.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Messages.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/FroggerScene.java</file>
-            <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Floatable.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/br/ol/frogger/FroggerScene.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/br/ol/ge/core/Entity.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/main/Main.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/br/ol/ge/core/Scene.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/br/ol/ge/core/Display.java</file>
+            <file>file:/E:/JavaGame-C-D-cr.OL/src/br/ol/frogger/FroggerEntity.java</file>
         </group>
     </open-files>
 </project-private>
