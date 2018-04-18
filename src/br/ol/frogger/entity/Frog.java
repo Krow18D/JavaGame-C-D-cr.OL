@@ -81,9 +81,12 @@ public class Frog extends FroggerEntity {
     public void updateGameOver() {
         frameIndex++;
         if (frameIndex > 180 && Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) {
+            changeFrogState(WIN);
             scene.backToTitle();
+            
         }
         else if (frameIndex > 480) {
+            changeFrogState(WIN);
             scene.backToTitle();
         }
     }

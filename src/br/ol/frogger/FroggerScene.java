@@ -21,6 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import br.ol.ge.core.Difficult;
 
 /**
  * FrScene class.
@@ -39,17 +40,16 @@ public class FroggerScene extends Scene {
     private final Riverbank[] riverbanks = new Riverbank[5];
     
     private double time = 0; // 0.0~1.0
-    private int lives = 4;
+    private int lives = 3;
     private int score;
     private int hiscore;
     private long playingStartTime;
     
-    //Difficult diff;
     Title title;
     
-    public void setLive()
+    public void setLive(int nlive)
     {
-        lives=3;
+        this.lives=nlive;
     }
      
     public FroggerScene() {
@@ -296,7 +296,11 @@ public class FroggerScene extends Scene {
     }
     
     public void startGame() {
-        lives = 4;
+        if(Difficult.getDiff()==Difficult.Diffi.EASY||Difficult.getDiff()==Difficult.Diffi.HARD)setLive(1);
+        else if(Difficult.getDiff()==Difficult.Diffi.NORMAL){
+            setLive(3);
+        }
+        
         score = 0;
         hideAllRiverbanks();
         resetTime();
@@ -311,9 +315,9 @@ public class FroggerScene extends Scene {
     }
     
     public boolean tryNextLife() {
-        lives--;
+        if(Difficult.getDiff()!=Difficult.Diffi.EASY)lives--;
         if (lives <= 0) {
-            changeState(GAME_OVER);
+            changeState(GAME_OVER);           
             return false;
         }
         resetTime();
@@ -323,7 +327,7 @@ public class FroggerScene extends Scene {
 
     public void backToTitle() {
         updateHiscore();
-        lives = 4;
+        setLive(3);
         score = 0;
         changeState(TITLE);
     }
@@ -331,10 +335,11 @@ public class FroggerScene extends Scene {
     public boolean isLevelCleared() {
         for (Riverbank riverbank : riverbanks) {
             if (!riverbank.isVisible()) {
+                
                 return false;
             }
-        }
-        setLive();
+        }setLive(lives+1);
+        //setLive(3);
         return true;
     }
         

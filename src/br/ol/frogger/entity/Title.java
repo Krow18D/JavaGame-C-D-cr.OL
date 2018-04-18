@@ -24,21 +24,13 @@ public class Title extends FroggerEntity {
     private final String easytext = "Easy";
     private final String normaltext = "Normal";
     private final String hardtext = "Hard";
-    private static int passdiff; 
     private static int countdiff=1;
     private boolean textPushSpaceVisible;
-    Difficult diff ;
     public Title(FroggerScene scene) {
         super(scene);
     }
-
-    public static int getCountdiff() {
-        return countdiff;
-    }
-
-    public static int getPassdiff() {
-        return passdiff;
-    }
+    
+    
 
     
     
@@ -53,12 +45,25 @@ public class Title extends FroggerEntity {
         textPushSpaceVisible = ((int) (System.nanoTime() * 0.000000005) % 3) < 2;
         if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
         {
+            
             scene.startGame();    
-//            if(countdiff==1)diff.setCar_velo(2);
-//            if(countdiff==2)diff.setCar_velo(4);
-//            if(countdiff==3)diff.setCar_velo(6);
-        passdiff=countdiff;
-
+            switch (countdiff) {
+                case 1:
+                    Difficult.setDiff(Difficult.Diffi.EASY);
+                    scene.setLive(1);
+                    break;
+                case 2:
+                    Difficult.setDiff(Difficult.Diffi.NORMAL);
+                    scene.setLive(3);
+                    break;
+                case 3:
+                    Difficult.setDiff(Difficult.Diffi.HARD);
+                    scene.setLive(1);
+                    
+                    break;
+                default:
+                    break;
+            }
                 
         }
         if(Keyboard.isKeyPressed(KeyEvent.VK_DOWN))
@@ -81,12 +86,12 @@ public class Title extends FroggerEntity {
         }
         scene.drawText(g, textCredit, 4, 184, Color.WHITE);
         scene.drawText(g, textOriginalBy, 44, 208, Color.WHITE);
-        if(countdiff==1)scene.drawText(g, easytext, 36, 130, Color.RED);
-        else scene.drawText(g, easytext, 36, 130, Color.WHITE);
-        if(countdiff==2)scene.drawText(g, normaltext, 36, 140, Color.RED);
-        else scene.drawText(g, normaltext, 36, 140, Color.WHITE);
-        if(countdiff==3)scene.drawText(g, hardtext, 36, 150, Color.RED);
-        else scene.drawText(g, hardtext, 36, 150, Color.WHITE);
+        if(countdiff==1)scene.drawText(g, easytext, 90, 145, Color.RED);
+        else scene.drawText(g, easytext, 90, 145, Color.WHITE);
+        if(countdiff==2)scene.drawText(g, normaltext, 90, 155, Color.RED);
+        else scene.drawText(g, normaltext, 90, 155, Color.WHITE);
+        if(countdiff==3)scene.drawText(g, hardtext, 90, 165, Color.RED);
+        else scene.drawText(g, hardtext, 90, 165, Color.WHITE);
     }
     
     @Override
