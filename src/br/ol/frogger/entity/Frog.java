@@ -4,6 +4,7 @@ import br.ol.frogger.FroggerEntity;
 import br.ol.frogger.FroggerScene;
 import static br.ol.frogger.FroggerScene.SceneState.*;
 import static br.ol.frogger.entity.Frog.FrogState.*;
+import br.ol.ge.core.Difficult;
 import br.ol.ge.core.Entity;
 import br.ol.ge.core.Keyboard;
 import java.awt.Color;
@@ -224,7 +225,9 @@ public class Frog extends FroggerEntity {
         lastDirection = dy < 0 ? "up" : lastDirection;
         setAnimation("frog_" + lastDirection);
         if (lastDirection.equals("up")) {
-            scene.addScore(10);
+            if(Difficult.getDiff()==Difficult.Diffi.EASY)scene.addScore(10);
+            if(Difficult.getDiff()==Difficult.Diffi.NORMAL)scene.addScore(20);
+            if(Difficult.getDiff()==Difficult.Diffi.HARD)scene.addScore(30);
             // TODO can't score twice (up, down, up)
         }
         changeFrogState(JUMPING);

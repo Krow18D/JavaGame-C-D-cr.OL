@@ -21,6 +21,7 @@ public class Title extends FroggerEntity {
     private final String textPushSpace = "PUSH SPACE TO START";
     private final String textOriginalBy = "ORIGINAL GAME BY";
     private final String textCredit = "PROGRAMMED BY O.L. (C) 2017";
+    private final String textSelectdiff = "Select Difficult and";
     private final String easytext = "Easy";
     private final String normaltext = "Normal";
     private final String hardtext = "Hard";
@@ -82,6 +83,7 @@ public class Title extends FroggerEntity {
     public void draw(Graphics2D g) {
         super.draw(g);
         if (textPushSpaceVisible) {
+            scene.drawText(g,textSelectdiff,34,105,Color.WHITE);
             scene.drawText(g, textPushSpace, 36, 120, Color.WHITE);
         }
         scene.drawText(g, textCredit, 4, 184, Color.WHITE);

@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import br.ol.ge.core.Difficult;
+import java.awt.event.KeyEvent;
+import br.ol.ge.core.Keyboard;
 
 /**
  * FrScene class.
@@ -124,7 +126,7 @@ public class FroggerScene extends Scene {
         try {
         FileOutputStream f = new FileOutputStream(new File("hiscore.obj"));
 	ObjectOutputStream o = new ObjectOutputStream(f);
-        o.writeObject(new Score(hiscore));
+        if(Difficult.getDiff()!=Difficult.Diffi.EASY)o.writeObject(new Score(hiscore));
             System.out.println("Save");
       } catch(IOException e) {
           System.out.println(e);
@@ -260,7 +262,12 @@ public class FroggerScene extends Scene {
     public void update() {
         checkTime();
         super.update();
-
+        if(Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE))
+        {
+            backToTitle();
+            resetTime();
+        resetPlayingStartTime();
+        }
         //long winTimeInSeconds = (System.currentTimeMillis() - playingStartTime) / 1000;
         //System.out.println("winTimeInSeconds = " + winTimeInSeconds);
     }
