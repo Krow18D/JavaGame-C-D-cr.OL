@@ -28,34 +28,19 @@ public class Title extends FroggerEntity {
     private static int countdiff=1;
     private boolean textPushSpaceVisible;
 
-    
-
     public Title(FroggerScene scene) {
         super(scene);
     }
-    
-    
-
-    
     
     @Override
     public void init() {
         setCollidible(false);
         loadImage("title.png");
-
     }
     
     @Override
     public void updateTitle() {
         textPushSpaceVisible = ((int) (System.nanoTime() * 0.000000005) % 3) < 2;
-
-        
-        
-        if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
-        {
-            
-             
-
         if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
         {
             switch (countdiff) {
@@ -88,7 +73,6 @@ public class Title extends FroggerEntity {
             countdiff--;
             if(countdiff<1)countdiff=3;
         }
-    }
     }
 
     @Override

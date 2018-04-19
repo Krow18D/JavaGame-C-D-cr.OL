@@ -81,8 +81,6 @@ public class Frog extends FroggerEntity {
         }
     }
 
-    
-
     @Override
     public void updateGameOver() {
         frameIndex++;
@@ -97,8 +95,6 @@ public class Frog extends FroggerEntity {
         }
     }
 
-    
-   
     SoundClass soundEffect = new SoundClass();
     
     private void updateIdle() 
