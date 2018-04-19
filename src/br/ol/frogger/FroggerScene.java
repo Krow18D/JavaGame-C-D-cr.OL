@@ -264,9 +264,10 @@ public class FroggerScene extends Scene {
         super.update();
         if(Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE))
         {
-            backToTitle();
+            frog.init();
             resetTime();
-        resetPlayingStartTime();
+            resetPlayingStartTime(); 
+            backToTitle();
         }
         //long winTimeInSeconds = (System.currentTimeMillis() - playingStartTime) / 1000;
         //System.out.println("winTimeInSeconds = " + winTimeInSeconds);
