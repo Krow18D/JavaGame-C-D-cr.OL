@@ -27,8 +27,9 @@ public class Title extends FroggerEntity {
     private final String hardtext = "Hard";
     private static int countdiff=1;
     private boolean textPushSpaceVisible;
+
     
-    
+
     public Title(FroggerScene scene) {
         super(scene);
     }
@@ -41,18 +42,22 @@ public class Title extends FroggerEntity {
     public void init() {
         setCollidible(false);
         loadImage("title.png");
-      
+
     }
     
     @Override
     public void updateTitle() {
         textPushSpaceVisible = ((int) (System.nanoTime() * 0.000000005) % 3) < 2;
+
         
         
         if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
         {
             
              
+
+        if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
+        {
             switch (countdiff) {
                 case 1:
                     Difficult.setDiff(Difficult.Diffi.EASY);
@@ -70,6 +75,7 @@ public class Title extends FroggerEntity {
                 default:
                     break;
             }
+
                 scene.startGame();   
         }
         if(Keyboard.isKeyPressed(KeyEvent.VK_DOWN))
@@ -82,6 +88,7 @@ public class Title extends FroggerEntity {
             countdiff--;
             if(countdiff<1)countdiff=3;
         }
+    }
     }
 
     @Override
@@ -106,4 +113,5 @@ public class Title extends FroggerEntity {
         setVisible(newState == TITLE);
     }
         
+
 }

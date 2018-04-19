@@ -3,6 +3,9 @@ package br.ol.frogger.entity;
 import br.ol.frogger.FroggerEntity;
 import br.ol.frogger.FroggerScene;
 import static br.ol.frogger.FroggerScene.SceneState.*;
+
+import br.ol.frogger.SoundClass;
+
 import static br.ol.frogger.entity.Frog.FrogState.*;
 import br.ol.ge.core.Difficult;
 import br.ol.ge.core.Entity;
@@ -77,7 +80,9 @@ public class Frog extends FroggerEntity {
             scene.nextLevel();
         }
     }
+
     
+
     @Override
     public void updateGameOver() {
         frameIndex++;
@@ -91,19 +96,29 @@ public class Frog extends FroggerEntity {
             scene.backToTitle();
         }
     }
+
     
-    private void updateIdle() {
+   
+    SoundClass soundEffect = new SoundClass();
+    
+    private void updateIdle() 
+    {
         if (Keyboard.isKeyPressed(VK_LEFT)) {
             jump(-2, 0);
+            soundEffect.playSound(SoundClass.Sound.FOOTSTEB, 1.0);
         }
         else if (Keyboard.isKeyPressed(VK_RIGHT)) {
             jump(2, 0);
+            soundEffect.playSound(SoundClass.Sound.FOOTSTEB, 1.0);
         }
         if (Keyboard.isKeyPressed(VK_UP)) {
             jump(0, -2);
+            soundEffect.playSound(SoundClass.Sound.FOOTSTEB, 1.0);
         }
         else if (Keyboard.isKeyPressed(VK_DOWN)) {
             jump(0, 2);
+            soundEffect.playSound(SoundClass.Sound.FOOTSTEB, 1.0);
+
         }
     }
     
@@ -132,6 +147,7 @@ public class Frog extends FroggerEntity {
         if (frameIndex > 64) {
             if (scene.tryNextLife()) {
                 reset();
+
             }
         }
     }
@@ -237,6 +253,7 @@ public class Frog extends FroggerEntity {
         if (frogState == DYING || frogState  == DIED) {
             return;
         }
+        soundEffect.playSound(SoundClass.Sound.GAMEOVER);
         frameIndex = 0;
         floatable = null;
         setAnimation("frog_dying");
@@ -250,6 +267,8 @@ public class Frog extends FroggerEntity {
     }
     
     private void win() {
+
+        soundEffect.playSound(SoundClass.Sound.REST);
         frameIndex = 0;
         setVisible(false);
         scene.addScore(200);

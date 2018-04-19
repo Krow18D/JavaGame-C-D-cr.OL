@@ -116,10 +116,15 @@ public class FroggerScene extends Scene {
     }
     
     public void updateHiscore() {
+
         if (score > hiscore&&Difficult.getDiff()!=Difficult.Diffi.EASY) {
+
+        if (score > hiscore) {
+
             hiscore = score;
             saveScore();
         }
+    }
     }
     
     private void saveScore() {
@@ -264,10 +269,16 @@ public class FroggerScene extends Scene {
         super.update();
         if(Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE))
         {
+
             frog.init();
             resetTime();
             resetPlayingStartTime(); 
             backToTitle();
+
+            backToTitle();
+            resetTime();
+        resetPlayingStartTime();
+
         }
         //long winTimeInSeconds = (System.currentTimeMillis() - playingStartTime) / 1000;
         //System.out.println("winTimeInSeconds = " + winTimeInSeconds);
@@ -333,6 +344,10 @@ public class FroggerScene extends Scene {
         return true;
     }
 
+
+
+
+    SoundClass soundEffect = new SoundClass();
     public void backToTitle() {
         updateHiscore();
         setLive(3);
@@ -347,9 +362,14 @@ public class FroggerScene extends Scene {
                 return false;
             }
         }setLive(lives+1);
+
+                soundEffect.playSound(SoundClass.Sound.WIN);
+
+
         //setLive(3);
         return true;
     }
+
         
     public void nextLevel() {
         // TODO: change to next level
@@ -358,5 +378,6 @@ public class FroggerScene extends Scene {
         hideAllRiverbanks();
         changeState(PLAYING);
     }
-    
 }
+    
+

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
             <url>src/br/ol/frogger/FroggerScene.java</url>
@@ -10,6 +11,9 @@
             </bookmark>
         </file>
     </editor-bookmarks>
+=======
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+>>>>>>> 0741661ebc772bbae5c03764e03b40809f0fb0f6
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="war">
             <file>file:/media/My%20Passport/Leo/apps/java/1981_frogger/JavaTest/src/br/ol/ge/core/BitmapFontRenderer.java</file>
@@ -31,6 +35,7 @@
             <file>file:/media/My%20Passport/Leo/apps/java/1981_frogger/JavaTest/src/br/ol/frogger/entity/Floatable.java</file>
         </group>
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Title.java</file>
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/ge/core/Scene.java</file>
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/ge/core/Display.java</file>
@@ -40,6 +45,14 @@
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/FroggerEntity.java</file>
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/entity/Background.java</file>
             <file>file:/C:/Users/karin/OneDrive/Desktop/Java2DFroggerGame-master/src/br/ol/frogger/FroggerScene.java</file>
+=======
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/frogger/Sound.java</file>
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/frogger/FroggerScene.java</file>
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/ge/core/Display.java</file>
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/frogger/entity/Floatable.java</file>
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/frogger/soundEffect.java</file>
+            <file>file:/C:/Users/GUEST!/Desktop/JavaGame-C-D-cr.OL-difficult/src/br/ol/frogger/entity/Frog.java</file>
+>>>>>>> 0741661ebc772bbae5c03764e03b40809f0fb0f6
         </group>
     </open-files>
 </project-private>
