@@ -116,7 +116,7 @@ public class FroggerScene extends Scene {
     }
     
     public void updateHiscore() {
-        if (score > hiscore) {
+        if (score > hiscore&&Difficult.getDiff()!=Difficult.Diffi.EASY) {
             hiscore = score;
             saveScore();
         }

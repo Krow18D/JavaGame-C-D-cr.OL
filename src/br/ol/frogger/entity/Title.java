@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import br.ol.ge.core.Difficult;
+import br.ol.ge.core.Audioplayer;
 
 /**
  * Title class.
@@ -27,6 +28,8 @@ public class Title extends FroggerEntity {
     private final String hardtext = "Hard";
     private static int countdiff=1;
     private boolean textPushSpaceVisible;
+    
+    private Audioplayer bgm;
     public Title(FroggerScene scene) {
         super(scene);
     }
@@ -39,11 +42,15 @@ public class Title extends FroggerEntity {
     public void init() {
         setCollidible(false);
         loadImage("title.png");
+        bgm = new Audioplayer("/src/res/bgm.mp3");
+        bgm.play();
     }
     
     @Override
     public void updateTitle() {
         textPushSpaceVisible = ((int) (System.nanoTime() * 0.000000005) % 3) < 2;
+        
+        
         if (Keyboard.isKeyPressed(KeyEvent.VK_SPACE)) 
         {
             
